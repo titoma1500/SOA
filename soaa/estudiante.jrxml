@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9ea8d56c-a4f5-481b-8aa3-e71d71d06208">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="cedula" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[
+			SELECT * FROM ESTUDIANTES
+			WHERE ($P{cedula} IS NULL OR $P{cedula} = '' OR CED_EST = $P{cedula})
+		]]>
+	</queryString>
+	<field name="CED_EST" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NOM_EST" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="APE_EST" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DIR_EST" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TEL_EST" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="231" y="29" width="100" height="20" uuid="f057e27d-24f7-42f0-a057-beebd4b7aadc"/>
+				<text><![CDATA[Reporte General]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="f1b96c70-48f6-4d92-a1eb-5d36515c487a"/>
+				<text><![CDATA[CED_EST]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="100" height="20" uuid="a13922e2-4042-4bb7-85ac-dfa47328d6e2"/>
+				<text><![CDATA[NOM_EST]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="0" width="100" height="20" uuid="162caa57-ed59-4a37-bf1c-398c99d19d8b"/>
+				<text><![CDATA[APE_EST]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="0" width="100" height="20" uuid="5d192815-f0d3-4172-9446-bd67a8fca3af"/>
+				<text><![CDATA[DIR_EST]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="0" width="100" height="20" uuid="a2953420-b35a-4971-ade0-136a36f76262"/>
+				<text><![CDATA[TEL_EST]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="d42e514c-eeab-483f-9a56-fa853a600e05"/>
+				<textFieldExpression><![CDATA[$F{CED_EST}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="100" height="20" uuid="fb409af0-a920-49d0-b443-ae09c0117964"/>
+				<textFieldExpression><![CDATA[$F{NOM_EST}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="100" height="20" uuid="73bb87be-1d2a-4584-9a78-b1b06662e82d"/>
+				<textFieldExpression><![CDATA[$F{APE_EST}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="100" height="20" uuid="2ac883fc-26c6-4cc4-9175-1a961e4aed10"/>
+				<textFieldExpression><![CDATA[$F{DIR_EST}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="100" height="20" uuid="7b0bd930-e594-4201-b03a-4f70aed8405f"/>
+				<textFieldExpression><![CDATA[$F{TEL_EST}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<noData>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="40"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No hay datos para mostrar]]></text>
+			</staticText>
+		</band>
+	</noData>
+</jasperReport>
